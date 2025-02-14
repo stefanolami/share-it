@@ -55,28 +55,30 @@ const CARDS = [
 
 const CardSection = () => {
 	return (
-		<div className="bg-terzo relative shadow-xl">
-			<div className="absolute bg-black/60 w-full h-full"></div>
-			<div className="w-full h-full z-10 relative p-16">
+		<div className="bg-primo relative shadow-xl">
+			{/* <div className="absolute bg-black/60 w-full h-full"></div> */}
+			<div className="w-full h-full z-10 relative py-16 px-4">
 				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
 					AI Solutions
 				</h2>
 				<div className="mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4 lg:gap-8 max-w-[900px]">
 					{CARDS.map((card, index) => (
 						<Card
-							className="bg-primo border-0 text-white w-full hover:bg-primo/80 shadow-lg hover:shadow-xl"
+							className="bg-primo-scuro border-0 text-white w-full hover:bg-primo-scuro-2 shadow-lg hover:shadow-xl"
 							key={index}
 						>
 							<CardHeader>
-								<div className="mb-4 flex items-center justify-center rounded-full bg-gradient-to-r from-secondo to-terzo w-12 h-12">
+								<div className="mb-6 flex items-center justify-center rounded-full bg-gradient-to-r from-secondo to-terzo w-12 h-12">
 									<card.icon className="text-3xl bg" />
 								</div>
 
-								<CardTitle className="font-titillium font-bold text-xl m">
+								<CardTitle className="font-titillium font-bold text-xl">
 									{card.title}
 								</CardTitle>
 							</CardHeader>
-							<CardContent>{card.content}</CardContent>
+							<CardContent className="">
+								{card.content}
+							</CardContent>
 						</Card>
 					))}
 				</div>

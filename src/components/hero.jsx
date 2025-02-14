@@ -17,7 +17,8 @@ export const Hero = () => {
 
 	const generateGridCount = () => {
 		const columns = Math.floor(document.body.clientWidth / 75)
-		const rows = Math.floor(document.body.clientHeight / 75)
+		//const rows = Math.floor(document.body.clientWidth / 75)
+		const rows = Math.floor(window.innerHeight / 75)
 
 		setSize({
 			columns,
@@ -38,7 +39,7 @@ export const Hero = () => {
 	}
 
 	return (
-		<div className="bg-primo-scuro">
+		<div className="bg-primo-scuro shadow-xl">
 			<div
 				ref={scope}
 				className="grid h-screen w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"

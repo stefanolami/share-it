@@ -1,6 +1,7 @@
 import { orbitron, titillium } from './fonts'
 import './globals.css'
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 export const metadata = {
 	title: 'ShareIT',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
 			>
 				<Header />
 				<main>{children}</main>
+				<Footer />
 			</body>
 		</html>
 	)

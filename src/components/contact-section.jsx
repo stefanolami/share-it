@@ -14,6 +14,7 @@ import {
 	FormMessage,
 } from './ui/form'
 import { Input } from './ui/input'
+import { Textarea } from './ui/textarea'
 
 const formSchema = z.object({
 	nome: z.string().min(2).max(50),
@@ -38,38 +39,88 @@ const ContactSection = () => {
 		console.log(values)
 	}
 	return (
-		<div className="bg-primo p-16">
-			<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
-				Contattaci
-			</h2>
-			<div className="mx-auto mt-16 max-w-[900px] text-white">
-				<Form {...form}>
-					<form
-						onSubmit={form.handleSubmit(onSubmit)}
-						className="space-y-8"
-					>
-						<FormField
-							control={form.control}
-							name="username"
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Username</FormLabel>
-									<FormControl>
-										<Input
-											placeholder="shadcn"
-											{...field}
-										/>
-									</FormControl>
-									<FormDescription>
-										This is your public display name.
-									</FormDescription>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<Button type="submit">Submit</Button>
-					</form>
-				</Form>
+		<div className="bg-terzo relative">
+			<div className="absolute bg-black/60 w-full h-full"></div>
+			<div className="w-full h-full z-10 relative py-16 px-4">
+				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
+					Contattaci
+				</h2>
+				<div className="mx-auto mt-16 max-w-[900px] text-white bg-primo p-12 rounded-xl shadow-lg font-titillium">
+					<Form {...form}>
+						<form
+							onSubmit={form.handleSubmit(onSubmit)}
+							className="space-y-8"
+						>
+							<div className="md:grid grid-cols-2 gap-8">
+								<FormField
+									control={form.control}
+									name="nome"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel className="text-lg">
+												Nome
+											</FormLabel>
+											<FormControl>
+												<Input
+													type="text"
+													placeholder=""
+													{...field}
+													className="bg-primo-chiaro/50 border-primo-scuro"
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+								<FormField
+									control={form.control}
+									name="email"
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel className="text-lg">
+												Email
+											</FormLabel>
+											<FormControl>
+												<Input
+													type="text"
+													placeholder=""
+													{...field}
+													className="bg-primo-chiaro/50 border-primo-scuro"
+												/>
+											</FormControl>
+											<FormMessage />
+										</FormItem>
+									)}
+								/>
+							</div>
+							<FormField
+								control={form.control}
+								name="messaggio"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel className="text-lg">
+											Messaggio
+										</FormLabel>
+										<FormControl>
+											<Textarea
+												placeholder=""
+												{...field}
+												className="bg-primo-chiaro/50 border-primo-scuro h-32"
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+							<Button
+								type="submit"
+								className="bg-secondo text-primo font-bold text-lg px-10 py-5 mx-auto flex shadow-lg hover:bg-secondo/80 hover:shadow-xl"
+							>
+								Invia
+							</Button>
+						</form>
+					</Form>
+				</div>
 			</div>
 		</div>
 	)
