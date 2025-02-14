@@ -2,6 +2,32 @@
 
 import React, { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
+import {
+	AiFillInstagram,
+	AiFillFacebook,
+	AiFillTikTok,
+	AiFillLinkedin,
+} from 'react-icons/ai'
+import Image from 'next/image'
+
+const LINKS = [
+	{
+		icon: <AiFillInstagram />,
+		url: 'https://www.instagram.com/',
+	},
+	{
+		icon: <AiFillFacebook />,
+		url: 'https://www.facebook.com/',
+	},
+	{
+		icon: <AiFillTikTok />,
+		url: 'https://www.tiktok.com/',
+	},
+	{
+		icon: <AiFillLinkedin />,
+		url: 'https://www.linkedin.com/',
+	},
+]
 
 const Footer = () => {
 	const [scope, animate] = useAnimate()
@@ -54,15 +80,22 @@ const Footer = () => {
 					/>
 				))}
 			</div>
-			<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8">
-				<p className="mb-6 mt-4 max-w-3xl text-center text-lg font-light font-titillium text-quarto md:text-xl">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Labore quisquam nemo excepturi officia necessitatibus
-					veritatis enim ipsam! Laudantium, reiciendis officia!
-				</p>
-				{/* <button className="font-titillium pointer-events-auto bg-secondo px-4 py-2 text-xl font-bold uppercase text-neutral-950">
-					Join waitlist
-				</button> */}
+			<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8 w-min mx-auto">
+				<div className="flex items-center justify-between w-4/5 mx-auto mb-6">
+					{LINKS.map(({ icon, url }, i) => (
+						<a
+							key={i}
+							href={url}
+							target="_blank"
+							className="text-white text-3xl pointer-events-auto"
+						>
+							{icon}
+						</a>
+					))}
+				</div>
+				<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-3xl md:text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
+					Share<span className="font-normal">IT</span>
+				</div>
 			</div>
 		</div>
 	)
