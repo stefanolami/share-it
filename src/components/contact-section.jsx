@@ -56,7 +56,7 @@ const ContactSection = () => {
 									control={form.control}
 									name="nome"
 									render={({ field }) => (
-										<FormItem>
+										<FormItem className="mb-4 md:mb-0">
 											<FormLabel className="text-lg">
 												Nome
 											</FormLabel>

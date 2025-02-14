@@ -177,10 +177,10 @@ const MobileMenuLink = ({ children, href, FoldContent, setMenuOpen }) => {
 						setMenuOpen(false)
 					}}
 					href="#"
-					className="flex w-full cursor-pointer items-center justify-between border-b border-quarto py-6 text-start text-2xl font-semibold"
+					className="flex w-full cursor-pointer items-center justify-between border-b border-terzo py-6 text-start text-2xl font-semibold"
 				>
 					<span>{children}</span>
-					<FiArrowRight />
+					<FiArrowRight className="text-" />
 				</a>
 			)}
 			{FoldContent && (
