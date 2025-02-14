@@ -40,7 +40,7 @@ const ContactSection = () => {
 	}
 	return (
 		<div className="bg-terzo relative">
-			<div className="absolute bg-black/60 w-full h-full"></div>
+			<div className="absolute bg-black/70 w-full h-full"></div>
 			<div className="w-full h-full z-10 relative py-16 px-4">
 				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
 					Contattaci
@@ -65,7 +65,7 @@ const ContactSection = () => {
 													type="text"
 													placeholder=""
 													{...field}
-													className="bg-primo-chiaro/50 border-primo-scuro"
+													className="bg-primo-chiaro/70 border-primo-scuro"
 												/>
 											</FormControl>
 											<FormMessage />
@@ -85,7 +85,7 @@ const ContactSection = () => {
 													type="text"
 													placeholder=""
 													{...field}
-													className="bg-primo-chiaro/50 border-primo-scuro"
+													className="bg-primo-chiaro/70 border-primo-scuro"
 												/>
 											</FormControl>
 											<FormMessage />
@@ -105,7 +105,7 @@ const ContactSection = () => {
 											<Textarea
 												placeholder=""
 												{...field}
-												className="bg-primo-chiaro/50 border-primo-scuro h-32"
+												className="bg-primo-chiaro/70 border-primo-scuro h-32"
 											/>
 										</FormControl>
 										<FormMessage />

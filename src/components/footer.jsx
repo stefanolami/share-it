@@ -80,21 +80,23 @@ const Footer = () => {
 					/>
 				))}
 			</div>
-			<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8 w-min mx-auto">
-				<div className="flex items-center justify-between w-4/5 mx-auto mb-6">
-					{LINKS.map(({ icon, url }, i) => (
-						<a
-							key={i}
-							href={url}
-							target="_blank"
-							className="text-white text-3xl pointer-events-auto"
-						>
-							{icon}
-						</a>
-					))}
-				</div>
-				<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-3xl md:text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
-					Share<span className="font-normal">IT</span>
+			<div className="pointer-events-none absolute bottom-[42%] md:bottom-[35%] w-full">
+				<div className="w-min mx-auto flex flex-col items-center justify-center">
+					<div className="flex items-center justify-between w-full md:w-4/5 mx-auto mb-3 md:mb-6">
+						{LINKS.map(({ icon, url }, i) => (
+							<a
+								key={i}
+								href={url}
+								target="_blank"
+								className="text-white text-3xl pointer-events-auto"
+							>
+								{icon}
+							</a>
+						))}
+					</div>
+					<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
+						Share<span className="font-normal">IT</span>
+					</div>
 				</div>
 			</div>
 		</div>
