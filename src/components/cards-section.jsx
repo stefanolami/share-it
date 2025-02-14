@@ -5,7 +5,7 @@ import {
 	Cardicon,
 	CardHeader,
 	CardTitle,
-} from './ui/card'
+} from '@/components/ui/card'
 import { BsGrid1X2 } from 'react-icons/bs'
 import { BsCamera } from 'react-icons/bs'
 import { BsGraphUpArrow } from 'react-icons/bs'
