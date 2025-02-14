@@ -6,56 +6,62 @@ import {
 	CardHeader,
 	CardTitle,
 } from './ui/card'
+import { BsGrid1X2 } from 'react-icons/bs'
+import { BsCamera } from 'react-icons/bs'
+import { BsGraphUpArrow } from 'react-icons/bs'
+import { BsBoxes } from 'react-icons/bs'
+import { BsCpu } from 'react-icons/bs'
+import { BsCodeSlash } from 'react-icons/bs'
 
 import { AiFillGithub } from 'react-icons/ai'
 
 const CARDS = [
 	{
-		title: 'Card 1',
-		content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-		icon: AiFillGithub,
+		title: 'Sviluppo siti Web',
+		content:
+			'Realizziamo siti web professionali, e-commerce e applicazioni web personalizzate in base alle esigenze del cliente.',
+		icon: BsCodeSlash,
 	},
 	{
-		title: 'Card 2',
+		title: 'UI/UX design',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-		icon: AiFillGithub,
+			'Desing per interfacce inruitive con unser experience ottimizzata per massimizzare la conversione.',
+		icon: BsGrid1X2,
 	},
 	{
-		title: 'Card 3',
-		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-		icon: AiFillGithub,
+		title: 'Forografia per E-commerce',
+		content: 'Servizi fotografici professionali per prodotti e-commerce.',
+		icon: BsCamera,
 	},
 	{
-		title: 'Card 1',
+		title: 'Campagne Marketing',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum',
-		icon: AiFillGithub,
+			'Strategia e gestione di campagne marketing digitali su tutti i principali canali.',
+		icon: BsGraphUpArrow,
 	},
 	{
-		title: 'Card 2',
+		title: 'Assistenza e consulenza',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-		icon: AiFillGithub,
+			'Supporto tecnico e consulenza strategica per ottimizzare la tua presenza digitale.',
+		icon: BsBoxes,
 	},
 	{
-		title: 'Card 3',
+		title: 'Agenti AI',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipis',
-		icon: AiFillGithub,
+			'Scopri i nostri agenti AI personalizzati per automatizzare e ottimizzare i processi aziendali.',
+		icon: BsCpu,
 	},
 ]
 
 const CardSection = () => {
 	return (
-		<div className="bg-terzo h-[1000px] relative shadow-xl">
+		<div className="bg-terzo relative shadow-xl">
 			<div className="absolute bg-black/60 w-full h-full"></div>
-			<div className="w-full h-full z-10 relative p-8">
-				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl mt-20">
+			<div className="w-full h-full z-10 relative p-16">
+				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
 					AI Solutions
 				</h2>
-				<div className="mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 max-w-[900px]">
+				<div className="mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4 lg:gap-8 max-w-[900px]">
 					{CARDS.map((card, index) => (
 						<Card
 							className="bg-primo border-0 text-white w-full hover:bg-primo/80 shadow-lg hover:shadow-xl"

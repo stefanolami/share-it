@@ -11,6 +11,7 @@ import {
 } from 'framer-motion'
 import useMeasure from 'react-use-measure'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = () => {
 	return (
@@ -64,14 +65,16 @@ const Logo = ({ color = 'white' }) => {
 	// Temp logo from https://logoipsum.com/
 	return (
 		<div className="flex items-center gap-2">
-			<div className=" bg-gradient-to-r from-secondo to-terzo bg-clip-text text-3xl md:text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
-				Share<span className="font-normal">IT</span>
-				{/* <Image
+			<Link href="/">
+				<div className=" bg-gradient-to-r from-secondo to-terzo bg-clip-text text-3xl md:text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
+					Share<span className="font-normal">IT</span>
+					{/* <Image
 					alt="pic"
 					fill
 					src={'/logo.png'}
 				/> */}
-			</div>
+				</div>
+			</Link>
 
 			{/* <svg
 				width="50"
