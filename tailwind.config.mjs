@@ -65,7 +65,6 @@ export default {
 			},
 			fontFamily: {
 				orbitron: ['var(--font-orbitron)'],
-				poppins: ['var(--font-poppins)'],
 				titillium: ['var(--font-titillium)'],
 			},
 		},
