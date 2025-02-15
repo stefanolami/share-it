@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MoreHorizontal } from 'lucide-react'
 
-import { Card } from '@/components/ui/card'
+/* import { Card } from '@/components/ui/card' */
 import { Button } from '@/components/ui/button'
 import {
 	Dialog,
@@ -10,7 +10,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from '@/components/ui/dialog'
-import { ScrollArea } from '@/components/ui/scroll-area'
+/* import { ScrollArea } from '@/components/ui/scroll-area' */
 import {
 	DropdownMenu,
 	DropdownMenuContent,
