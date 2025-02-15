@@ -55,14 +55,10 @@ export const Hero = () => {
 				))}
 			</div>
 			<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8">
-				<h1 className="text-center text-7xl font-black uppercase text-white sm:text-8xl md:text-9xl font-orbitron">
-					Enter the void
+				<h1 className="text-center text-7xl font-black uppercase text-white sm:text-8xl md:text-9xl font-orbitron drop-shadow-lg">
+					JOIN THE FUTURE
 				</h1>
-				<p className="mb-6 mt-4 max-w-3xl text-center text-lg font-light font-titillium text-quarto md:text-xl">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Labore quisquam nemo excepturi officia necessitatibus
-					veritatis enim ipsam! Laudantium, reiciendis officia!
-				</p>
+				<p className="mb-6 mt-4 max-w-3xl text-center text-lg font-light font-titillium text-quarto md:text-xl"></p>
 				{/* <button className="font-titillium pointer-events-auto bg-secondo px-4 py-2 text-xl font-bold uppercase text-neutral-950">
 					Join waitlist
 				</button> */}

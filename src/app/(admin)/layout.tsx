@@ -14,7 +14,9 @@ export default function AdminLayout({
 	return (
 		<>
 			<HeaderAdmin />
-			<main>{children}</main>
+			<main className="bg-primo-scuro pt-48 min-h-screen">
+				{children}
+			</main>
 		</>
 	)
 }

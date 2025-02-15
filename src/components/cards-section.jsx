@@ -14,46 +14,38 @@ import { BsCpu } from 'react-icons/bs'
 import { BsCodeSlash } from 'react-icons/bs'
 
 import { AiFillGithub } from 'react-icons/ai'
+import { getCards } from '@/actions/cards'
 
 const CARDS = [
 	{
-		title: 'Sviluppo siti Web',
-		content:
-			'Realizziamo siti web professionali, e-commerce e applicazioni web personalizzate in base alle esigenze del cliente.',
 		icon: BsCodeSlash,
 	},
 	{
-		title: 'UI/UX design',
-		content:
-			'Desing per interfacce inruitive con unser experience ottimizzata per massimizzare la conversione.',
 		icon: BsGrid1X2,
 	},
 	{
-		title: 'Forografia per E-commerce',
-		content: 'Servizi fotografici professionali per prodotti e-commerce.',
 		icon: BsCamera,
 	},
 	{
-		title: 'Campagne Marketing',
-		content:
-			'Strategia e gestione di campagne marketing digitali su tutti i principali canali.',
 		icon: BsGraphUpArrow,
 	},
 	{
-		title: 'Assistenza e consulenza',
-		content:
-			'Supporto tecnico e consulenza strategica per ottimizzare la tua presenza digitale.',
 		icon: BsBoxes,
 	},
 	{
-		title: 'Agenti AI',
-		content:
-			'Scopri i nostri agenti AI personalizzati per automatizzare e ottimizzare i processi aziendali.',
 		icon: BsCpu,
 	},
 ]
 
-const CardSection = () => {
+const CardSection = async () => {
+	const cardsResponse = await getCards()
+	const cards = cardsResponse
+		.map((card, index) => ({
+			...card,
+			icon: CARDS[index].icon,
+		}))
+		.sort((a, b) => a.id - b.id)
+
 	return (
 		<div className="bg-primo relative shadow-xl">
 			{/* <div className="absolute bg-black/60 w-full h-full"></div> */}
@@ -62,7 +54,7 @@ const CardSection = () => {
 					AI Solutions
 				</h2>
 				<div className="mt-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4 lg:gap-8 max-w-[900px]">
-					{CARDS.map((card, index) => (
+					{cards.map((card, index) => (
 						<Card
 							className="bg-primo-scuro border-0 text-white w-full hover:bg-primo-scuro-2 shadow-lg hover:shadow-xl"
 							key={index}

@@ -12,6 +12,7 @@ import {
 import useMeasure from 'react-use-measure'
 import Image from 'next/image'
 import Link from 'next/link'
+import NavAdmin from './nav-admin'
 
 const HeaderAdmin = () => {
 	return (
@@ -53,7 +54,7 @@ const FlyoutNav = () => {
 			<div className="mx-auto flex max-w-7xl items-center justify-between">
 				<Logo />
 				<div className="hidden gap-6 lg:flex">
-					<Links />
+					<NavAdmin />
 				</div>
 				<MobileMenu />
 			</div>
