@@ -65,7 +65,7 @@ const Footer = () => {
 	}
 
 	return (
-		<div className="bg-primo-scuro shadow-xl relative">
+		<div className="bg-primo-scuro shadow-[0_35px_35px_35px_rgba(0,0,0,0.5)] relative">
 			<div
 				ref={scope}
 				className="grid h-[50vh] w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"

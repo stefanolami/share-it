@@ -41,7 +41,7 @@ export const Hero = () => {
 	return (
 		<div
 			style={{ perspective: '10000px' }}
-			className="bg-primo-scuro shadow-2xl z-10"
+			className="bg-primo-scuro shadow-2xl z-10 relative"
 		>
 			<div
 				ref={scope}

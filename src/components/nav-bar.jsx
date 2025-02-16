@@ -15,11 +15,9 @@ const NavBar = () => {
 	const [selected, setSelected] = useState()
 
 	const pathname = usePathname()
-	console.log(pathname)
 
 	useEffect(() => {
 		const selectedLink = LINKS.filter((link) => link.url === pathname)
-		console.log('selected l;ink', selectedLink)
 		if (selectedLink && selectedLink !== selected) {
 			setSelected(selectedLink[0])
 		}
@@ -37,6 +35,7 @@ const NavBar = () => {
 						selected={selected === link}
 						setSelected={setSelected}
 						key={link}
+						isHome={pathname === '/'}
 					/>
 				</Link>
 			))}
@@ -44,14 +43,14 @@ const NavBar = () => {
 	)
 }
 
-const Chip = ({ link, selected, setSelected }) => {
+const Chip = ({ link, selected, setSelected, isHome }) => {
 	return (
 		<button
 			onClick={() => setSelected(link)}
 			className={`${
 				selected
 					? 'text-primo-scuro'
-					: 'text-slate-300 hover:text-slate-200 hover:bg-slate-700'
+					: 'text-white/80 hover:text-slate-200 hover:bg-slate-700'
 			} text-sm transition-colors px-4 py-2 rounded-lg relative`}
 		>
 			<span className="relative z-10 font-titillium text-xl font-bold">
@@ -60,8 +59,10 @@ const Chip = ({ link, selected, setSelected }) => {
 			{selected && (
 				<motion.span
 					layoutId="pill-tab"
-					transition={{ type: 'spring', duration: 0.5 }}
-					className="absolute inset-0 z-0 bg-gradient-to-r from-secondo to-terzo rounded-lg"
+					transition={{ type: 'spring', duration: 0.5, from: 0 }}
+					className={`${
+						isHome ? 'opacity-0' : 'opacity-100'
+					} absolute inset-0 z-0 bg-gradient-to-r from-secondo to-terzo rounded-lg`}
 				></motion.span>
 			)}
 		</button>
