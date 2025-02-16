@@ -33,6 +33,7 @@ body {
 		--chart-4: 43 74% 66%;
 		--chart-5: 27 87% 67%;
 		--radius: 0.5rem;
+		--secondo: '#64FFDA';
 	}
 	.dark {
 		--background: 20 14.3% 4.1%;
@@ -72,10 +73,102 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+	* {
+		@apply border-border;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
+}
+
+.roboto-container {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	background-color: transparent;
+}
+
+.roboto-container.small {
+	width: 200px;
+	height: 200px;
+}
+
+.roboto-container.large {
+	width: 600px;
+	height: 600px;
+}
+
+/* Parti base del robot con i colori del brand */
+.roboto-hair {
+	fill: none;
+	stroke: var(--secondo);
+	stroke-width: 6;
+	stroke-linecap: round;
+	transition: stroke 0.3s ease;
+}
+
+.roboto-antenna-light {
+	fill: var(--terzo);
+	transition: fill 0.3s ease;
+}
+
+.roboto-head {
+	fill: var(--quarto);
+	stroke: var(--secondo);
+	stroke-width: 6;
+	stroke-linejoin: round;
+	transition: fill 0.3s ease;
+}
+
+.roboto-eye-outer {
+	fill: var(--terzo);
+	stroke: var(--secondo);
+	stroke-width: 4;
+	transition: fill 0.3s ease;
+}
+
+.roboto-eye-inner {
+	fill: var(--primo);
+	transition: fill 0.3s ease;
+}
+
+.roboto-mouth {
+	fill: var(--primo);
+	transition: fill 0.3s ease;
+}
+
+.roboto-body {
+	fill: var(--primo);
+	stroke: var(--secondo);
+	stroke-width: 4;
+	transition: fill 0.3s ease;
+}
+
+/* Stato attivo - accent primario più luminoso */
+.roboto-container:hover .roboto-antenna-light {
+	fill: var(--secondo);
+}
+
+.roboto-container:hover .roboto-eye-outer {
+	fill: var(--secondo);
+}
+
+/* Stato inattivo */
+.inactive .roboto-eye-outer {
+	fill: var(--quarto);
+}
+
+.inactive .roboto-eye-inner {
+	fill: var(--primo);
+}
+
+.inactive .roboto-antenna-light {
+	fill: var(--quarto);
+}
+
+.inactive .roboto-hair,
+.inactive .roboto-head,
+.inactive .roboto-body {
+	stroke: var(--quarto);
 }

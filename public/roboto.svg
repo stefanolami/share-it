@@ -1,0 +1,84 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Capello/Antenna -->
+    <g id="roboto-hair">
+        <path 
+            d="M220 90 
+               Q220 70, 230 60
+               Q240 50, 230 40
+               Q220 30, 220 40" 
+            fill="none"
+            stroke="#64FFDA"
+            stroke-width="6"
+            stroke-linecap="round"
+        />
+        <circle cx="220" cy="35" r="8" fill="#3B82F6"/>
+    </g>
+
+    <!-- Testa -->
+    <g id="roboto-head">
+        <path 
+            d="M120 100 
+               Q120 90, 130 90
+               L270 90 
+               Q280 90, 290 100
+               L290 280
+               Q290 290, 280 290
+               L130 290
+               Q120 290, 120 280
+               Z" 
+            fill="#8892B0"
+            stroke="#64FFDA"
+            stroke-width="6"
+            stroke-linejoin="round"
+        />
+    </g>
+
+    <!-- Occhio -->
+    <g id="roboto-eye">
+        <circle 
+            cx="200" 
+            cy="170" 
+            r="35" 
+            fill="#3B82F6"
+            stroke="#64FFDA"
+            stroke-width="4"
+        />
+        <circle 
+            cx="200" 
+            cy="170" 
+            r="18" 
+            fill="#0A192F"
+        />
+    </g>
+
+    <!-- Bocca -->
+    <g id="roboto-mouth">
+        <rect 
+            x="160" 
+            y="220" 
+            width="80" 
+            height="30" 
+            rx="15" 
+            ry="15"
+            fill="#0A192F"
+        />
+    </g>
+
+    <!-- Corpo/Collo -->
+    <g id="roboto-body">
+        <path 
+            d="M170 290 
+               L230 290
+               Q240 290, 240 300
+               L240 320
+               Q240 330, 230 330
+               L170 330
+               Q160 330, 160 320
+               L160 300
+               Q160 290, 170 290"
+            fill="#0A192F"
+            stroke="#64FFDA"
+            stroke-width="4"
+        />
+    </g>
+</svg>
