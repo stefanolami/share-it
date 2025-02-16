@@ -13,6 +13,7 @@ import useMeasure from 'react-use-measure'
 import Image from 'next/image'
 import Link from 'next/link'
 import NavBar from './nav-bar'
+import MobileNav from './mobile-nav'
 
 const Header = () => {
 	return (
@@ -56,7 +57,7 @@ const FlyoutNav = () => {
 				<div className="hidden gap-6 lg:flex">
 					<NavBar />
 				</div>
-				<MobileMenu />
+				<MobileNav />
 			</div>
 		</nav>
 	)
@@ -233,6 +234,7 @@ const MobileMenu = () => {
 								<MobileMenuLink
 									key={l.text}
 									href={l.href}
+									setMenuOpen={setOpen}
 								>
 									{l.text}
 								</MobileMenuLink>

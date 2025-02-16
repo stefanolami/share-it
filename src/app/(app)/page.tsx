@@ -1,6 +1,6 @@
-import ContactSection from '../../components/contact-section'
-import CardSection from '../../components/cards-section'
-import { Hero } from '../../components/hero'
+import ContactSection from '@/components/home/contact-section'
+import CardSection from '@/components/home/cards-section'
+import { Hero } from '@/components/hero/hero'
 
 export default function Home() {
 	return (

@@ -1,5 +1,5 @@
 import ChiSiamoComponent from '@/components/chi-siamo'
-import HeroSmall from '@/components/hero-small'
+import HeroSmall from '@/components/hero/hero-small'
 
 const ChiSiamoPage = () => {
 	return (

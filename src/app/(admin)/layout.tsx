@@ -1,4 +1,4 @@
-import HeaderAdmin from '@/components/admin/header-admin'
+import HeaderAdmin from '@/components/header/header-admin'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

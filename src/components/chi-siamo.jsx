@@ -21,7 +21,7 @@ const ChiSiamoComponent = () => {
 		<>
 			<div
 				ref={ref}
-				className="relative"
+				className="relative "
 			>
 				{CARDS.map((c, idx) => (
 					<Card
@@ -52,15 +52,14 @@ const Card = ({ position, card, scrollYProgress }) => {
 				height: CARD_HEIGHT,
 				y: position === CARDS.length ? undefined : y,
 			}}
-			className={`${card.classes} sticky top-0 flex w-full origin-top flex-col items-center justify-center px-4`}
+			className={`${card.classes} sticky top-0 flex w-full origin-top flex-col items-start justify-center px-4 md:px-20 lg:px-12`}
 		>
-			<card.Icon className="mb-4 text-4xl" />
-			<h3 className="mb-6 text-center text-4xl font-semibold md:text-6xl">
-				{card.title}
-			</h3>
-			<p className="mb-8 max-w-lg text-center text-sm md:text-base">
-				{card.description}
-			</p>
+			<div className="w-full max-w-5xl mx-auto">
+				<h3 className="mb-6 text-2xl font-semibold md:text-4xl">
+					{card.title}
+				</h3>
+				<p className="mb-8 text-base md:text-lg">{card.description}</p>
+			</div>
 		</motion.div>
 	)
 }
@@ -71,9 +70,9 @@ const CARDS = [
 	{
 		id: 1,
 		Icon: FiCalendar,
-		title: 'A new type of Calendar',
+		title: 'ShareIT',
 		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illo officia atque iure voluptatibus necessitatibus odit cupiditate reprehenderit iusto quaerat!',
+			'Siamo un team di innovatori digitali che trasforma idee in esperienze tecnologiche memorabili. La nostra missione è guidare leaziende attraverso la loro evoluzione digitale, combinando expertise tecnica e creatività per risultati straordinari.',
 		classes: 'bg-primo text-quarto',
 		routeTo: '#',
 	},
