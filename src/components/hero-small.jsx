@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAnimate } from 'framer-motion'
 
-export const Hero = () => {
+const HeroSmall = ({ title }) => {
 	const [scope, animate] = useAnimate()
 
 	const [size, setSize] = useState({ columns: 0, rows: 0 })
@@ -18,7 +18,7 @@ export const Hero = () => {
 	const generateGridCount = () => {
 		const columns = Math.floor(document.body.clientWidth / 75)
 		//const rows = Math.floor(document.body.clientWidth / 75)
-		const rows = Math.floor(window.innerHeight / 75)
+		const rows = Math.floor(300 / 75)
 
 		setSize({
 			columns,
@@ -39,13 +39,10 @@ export const Hero = () => {
 	}
 
 	return (
-		<div
-			style={{ perspective: '10000px' }}
-			className="bg-primo-scuro shadow-2xl z-10"
-		>
+		<div className="bg-primo-scuro shadow-2xl z-10 relative">
 			<div
 				ref={scope}
-				className="grid h-screen w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
+				className="grid h-[300px] w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
 			>
 				{[...Array(size.rows * size.columns)].map((_, i) => (
 					<div
@@ -57,15 +54,15 @@ export const Hero = () => {
 					/>
 				))}
 			</div>
-			<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8">
-				<h1 className="text-center text-7xl font-black uppercase text-white sm:text-8xl md:text-9xl font-orbitron drop-shadow-lg">
-					JOIN THE FUTURE
-				</h1>
-				<p className="mb-6 mt-4 max-w-3xl text-center text-lg font-light font-titillium text-quarto md:text-xl"></p>
-				{/* <button className="font-titillium pointer-events-auto bg-secondo px-4 py-2 text-xl font-bold uppercase text-neutral-950">
-					Join waitlist
-				</button> */}
+			<div className="pointer-events-none absolute bottom-6 px-6 lg:px-12 w-full">
+				<div className="w-full max-w-7xl mx-auto relative">
+					<h1 className="text-left text-2xl font-bold text-white md:text-2xl lg:text-5xl font-orbitron drop-shadow-lg">
+						{title}
+					</h1>
+				</div>
 			</div>
 		</div>
 	)
 }
+
+export default HeroSmall

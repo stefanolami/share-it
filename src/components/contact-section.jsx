@@ -39,7 +39,7 @@ const ContactSection = () => {
 		console.log(values)
 	}
 	return (
-		<div className="bg-terzo relative">
+		<div className="bg-terzo relative inset-shadow">
 			<div className="absolute bg-black/70 w-full h-full"></div>
 			<div className="w-full h-full z-10 relative py-16 px-4">
 				<h2 className="font-orbitron text-secondo font-bold text-center text-3xl">
