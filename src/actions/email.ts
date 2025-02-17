@@ -15,9 +15,10 @@ export async function sendEmail(data: FormData) {
 	})
 		.then((res) => res.json())
 		.then((response) => {
-			console.log(response.message)
+			return response
 		})
 		.catch((err) => {
 			console.log(err)
+			return err
 		})
 }

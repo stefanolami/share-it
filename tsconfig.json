@@ -28,7 +28,8 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"src/components/header/nav-admin.jsx",
-		"src/app/(app)/chi-siamo/page.jsx"
+		"src/app/(app)/chi-siamo/page.jsx",
+		"src/components/privacy-cookies.jsx"
 	],
 	"exclude": ["node_modules"]
 }

@@ -50,7 +50,7 @@ const CardSection = ({ position, card, scrollYProgress }) => {
 			}}
 			className={`${card.classes} sticky top-0 flex w-full origin-top flex-col items-start justify-center px-8 md:px-32 lg:px-48`}
 		>
-			<div>
+			<div className="max-w-4xl mx-auto">
 				<div className="flex flex-row items-center justify-start mb-4 md:mb-12">
 					<div>
 						<card.icon className="text-2xl md:text-4xl mr-4 md:mr-8" />

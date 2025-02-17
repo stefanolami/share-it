@@ -16,27 +16,43 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { sendEmail } from '@/actions/email'
+import { useState } from 'react'
 
 const formSchema = z.object({
-	nome: z.string().min(2).max(50),
+	name: z.string().min(2).max(50),
 	email: z.string().min(2).max(50),
-	messaggio: z.string().min(2).max(50),
+	message: z.string().min(2).max(50),
 })
 
 const ContactSection = () => {
+	const [responseMessage, setResponseMessage] = useState('')
+	const [responseError, setResponseError] = useState('')
+	const [isSending, setIsSending] = useState(false)
+
 	const form = useForm({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
-			nome: '',
+			name: '',
 			email: '',
-			messaggio: '',
+			message: '',
 		},
 	})
 
 	// 2. Define a submit handler.
 	const onSubmit = (values) => {
-		sendEmail(values)
-		console.log(values)
+		setIsSending(true)
+		const { response, err } = sendEmail(values)
+
+		if (!response || err) {
+			setResponseMessage('')
+			setResponseError("Errore nell'invio del messaggio")
+			setIsSending(false)
+			console.log(err)
+		}
+		setResponseError('')
+		setResponseMessage('Messaggio inviato con successo')
+		setIsSending(false)
+		form.reset()
 	}
 	return (
 		<div className="bg-terzo relative inset-shadow">
@@ -54,7 +70,7 @@ const ContactSection = () => {
 							<div className="md:grid grid-cols-2 gap-8">
 								<FormField
 									control={form.control}
-									name="nome"
+									name="name"
 									render={({ field }) => (
 										<FormItem className="mb-4 md:mb-0">
 											<FormLabel className="text-lg">
@@ -95,7 +111,7 @@ const ContactSection = () => {
 							</div>
 							<FormField
 								control={form.control}
-								name="messaggio"
+								name="message"
 								render={({ field }) => (
 									<FormItem>
 										<FormLabel className="text-lg">
@@ -118,6 +134,16 @@ const ContactSection = () => {
 							>
 								Invia
 							</Button>
+							{responseMessage && (
+								<div className="mx-auto font-titillium text-green-600 text-center">
+									{responseMessage}
+								</div>
+							)}
+							{responseError && (
+								<div className="mx-auto font-titillium text-red-600 text-center">
+									{responseError}
+								</div>
+							)}
 						</form>
 					</Form>
 				</div>

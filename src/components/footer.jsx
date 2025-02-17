@@ -17,6 +17,7 @@ import {
 	BsWhatsapp,
 	BsLinkedin,
 } from 'react-icons/bs'
+import Link from 'next/link'
 
 const LINKS = [
 	{
@@ -96,20 +97,29 @@ const Footer = () => {
 				<div className="w-min mx-auto flex flex-col h-full items-center justify-center">
 					<div className="flex items-center justify-between w-full md:w-4/5 mx-auto mb-3 md:mb-6">
 						{LINKS.map(({ icon, url }, i) => (
-							<a
+							<Link
 								key={i}
 								href={url}
 								target="_blank"
 								className="text-white text-3xl pointer-events-auto"
 							>
 								{icon}
-							</a>
+							</Link>
 						))}
 					</div>
 					<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-[42px] md:text-[50px] font-bold font-orbitron text-transparent">
 						Share<span className="font-normal">IT</span>
 					</div>
 				</div>
+			</div>
+			<div className="absolute bottom-3 w-full px-[2%] flex justify-between gap-4 items-center text-quarto text-[10px] md:text-xs">
+				<p className="">© 2025 ShareIT. Tutti i diritti riservati.</p>
+				<Link
+					href="/privacy-cookies"
+					className=" underline"
+				>
+					Privacy e cookie policy
+				</Link>
 			</div>
 		</div>
 	)
