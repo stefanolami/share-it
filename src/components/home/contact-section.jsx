@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { sendEmail } from '@/actions/email'
 
 const formSchema = z.object({
 	nome: z.string().min(2).max(50),
@@ -33,9 +34,8 @@ const ContactSection = () => {
 	})
 
 	// 2. Define a submit handler.
-	function onSubmit(values) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
+	const onSubmit = (values) => {
+		sendEmail(values)
 		console.log(values)
 	}
 	return (
