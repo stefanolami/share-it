@@ -97,11 +97,11 @@ const CardSection = ({ position, card, scrollYProgress }) => {
 				>
 					{card.title}
 				</h3>
-				<p className="mb-4 text-base md:text-lg xl:text-xl font-bold">
+				<p className="mb-4 text-base md:text-lg xl:text-xl">
 					{card.description[0]}
 				</p>
 				{card.description[1] && (
-					<p className="mb-8 text-base md:text-lg xl:text-xl font-bold">
+					<p className="mb-8 text-base md:text-lg xl:text-xl">
 						{card.description[1]}
 					</p>
 				)}
@@ -202,7 +202,7 @@ const CARDS = [
 			'Siamo un team di innovatori digitali che trasforma idee in esperienze tecnologiche memorabili. La nostra missione è guidare leaziende attraverso la loro evoluzione digitale, combinando expertise tecnica e creatività per risultati straordinari.',
 		],
 		classes: 'bg-primo text-quarto',
-		titleClass: 'text-terzo',
+		titleClass: 'font-orbitron text-terzo',
 		routeTo: '#',
 	},
 	{
@@ -213,8 +213,8 @@ const CARDS = [
 			"ShareIT nasce dall'unione di professionisti con anni di esperienza nel settore digitale. Prima di fondare l'azienda, il nostro team ha collaborato a numerosi progettiweb, sviluppato strategie di marketing innovative e gestito con successo piattaforme di e-commerce.",
 			'Questa solida base di esperienza ci ha permesso di comprendere profondamente le sfide che le aziende affrontano nel loro percorso di digitalizzazione. Oggi,mettiamo questa conoscenza al servizio dei nostri clienti, guidandoli verso il futuro digitale.',
 		],
-		classes: 'bg-secondo text-primo-scuro',
-		titleClass: 'text-terzo',
+		classes: 'bg-white text-primo-scuro',
+		titleClass: 'font-orbitron text-terzo',
 		routeTo: '#',
 	},
 	{
@@ -225,7 +225,7 @@ const CARDS = [
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illo officia atque iure voluptatibus necessitatibus odit cupiditate reprehenderit iusto quaerat!',
 		],
 		classes: 'bg-primo text-quarto',
-		titleClass: 'text-terzo',
+		titleClass: 'font-orbitron text-terzo',
 		routeTo: '#',
 		boxes: [
 			{
@@ -278,8 +278,8 @@ const CARDS = [
 				title: 'Assistenza diretta',
 			},
 		],
-		classes: 'bg-secondo text-primo-scuro',
-		titleClass: 'text-terzo',
+		classes: 'bg-white text-primo-scuro',
+		titleClass: 'font-orbitron text-terzo',
 		routeTo: '#',
 	},
 ]
