@@ -9,23 +9,31 @@ import {
 	AiFillLinkedin,
 } from 'react-icons/ai'
 import Image from 'next/image'
+import {
+	BsTwitterX,
+	BsTelegram,
+	BsFacebook,
+	BsInstagram,
+	BsWhatsapp,
+	BsLinkedin,
+} from 'react-icons/bs'
 
 const LINKS = [
 	{
-		icon: <AiFillInstagram />,
-		url: 'https://www.instagram.com/',
+		icon: <BsTwitterX />,
+		url: 'https://x.com/Shareitagent',
 	},
 	{
-		icon: <AiFillFacebook />,
-		url: 'https://www.facebook.com/',
+		icon: <BsInstagram />,
+		url: 'https://www.instagram.com/shareit_robothead',
 	},
 	{
-		icon: <AiFillTikTok />,
-		url: 'https://www.tiktok.com/',
+		icon: <BsFacebook />,
+		url: 'https://www.facebook.com/share/16A8X2Mgk3/',
 	},
 	{
-		icon: <AiFillLinkedin />,
-		url: 'https://www.linkedin.com/',
+		icon: <BsLinkedin />,
+		url: 'https://www.linkedin.com/in/shareit-webagency-26b348300/',
 	},
 ]
 
@@ -42,9 +50,13 @@ const Footer = () => {
 	}, [])
 
 	const generateGridCount = () => {
-		const columns = Math.floor(document.body.clientWidth / 75)
+		const width = document.body.clientWidth
+		const columns = Math.floor(width / 75)
 		//const rows = Math.floor(document.body.clientWidth / 75)
-		const rows = Math.floor(window.innerHeight / 2 / 75)
+
+		const height = width >= 768 ? 300 : 225
+
+		const rows = Math.floor(height / 75)
 
 		setSize({
 			columns,
@@ -68,7 +80,7 @@ const Footer = () => {
 		<div className="bg-primo-scuro shadow-[0_35px_35px_35px_rgba(0,0,0,0.5)] relative">
 			<div
 				ref={scope}
-				className="grid h-[50vh] w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
+				className={`grid h-[225px] md:h-[300px] w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]`}
 			>
 				{[...Array(size.rows * size.columns)].map((_, i) => (
 					<div
@@ -80,8 +92,8 @@ const Footer = () => {
 					/>
 				))}
 			</div>
-			<div className="pointer-events-none absolute bottom-[42%] md:bottom-[35%] w-full">
-				<div className="w-min mx-auto flex flex-col items-center justify-center">
+			<div className="pointer-events-none absolute bottom-[35%] md:bottom-[35%] w-full">
+				<div className="w-min mx-auto flex flex-col h-full items-center justify-center">
 					<div className="flex items-center justify-between w-full md:w-4/5 mx-auto mb-3 md:mb-6">
 						{LINKS.map(({ icon, url }, i) => (
 							<a
@@ -94,7 +106,7 @@ const Footer = () => {
 							</a>
 						))}
 					</div>
-					<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-[42px] lg:text-[50px] font-bold font-orbitron text-transparent">
+					<div className="bg-gradient-to-r from-secondo to-terzo bg-clip-text text-[42px] md:text-[50px] font-bold font-orbitron text-transparent">
 						Share<span className="font-normal">IT</span>
 					</div>
 				</div>
