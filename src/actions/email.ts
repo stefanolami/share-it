@@ -19,6 +19,6 @@ export async function sendEmail(data: FormData) {
 		})
 		.catch((err) => {
 			console.log(err)
-			return err
+			return
 		})
 }

@@ -110,7 +110,7 @@ const CardSection = ({ position, card, scrollYProgress }) => {
 						<h4 className="mb-4 text-lg md:text-xl xl:text-2xl font-bold">
 							Le Nostre Specializzazioni
 						</h4>
-						<div className="flex flex-auto flex-wrap fle-row items-center justify-between gap-4 w-full">
+						<div className="flex flex-auto flex-wrap flex-row items-center justify-between gap-4 w-full">
 							{card.smallBoxes.map((box, index) => (
 								<div
 									key={index}
