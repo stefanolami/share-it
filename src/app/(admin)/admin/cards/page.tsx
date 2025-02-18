@@ -5,7 +5,7 @@ import React from 'react'
 const CardsAdminPage = async () => {
 	const cards = await getCards()
 	return (
-		<div className="">
+		<div className="pb-32 bg-primo-scuro">
 			<CardsAdmin cards={cards} />
 		</div>
 	)

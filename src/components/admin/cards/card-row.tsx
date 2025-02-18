@@ -59,7 +59,7 @@ export const CardRow = ({
 	return (
 		<>
 			<TableRow className="hover:bg-primo/70">
-				<TableCell className="font-medium">{card.title}</TableCell>
+				<TableCell className="font-medium p-4">{card.title}</TableCell>
 				<TableCell className="font-medium">{card.content}</TableCell>
 
 				<TableCell>

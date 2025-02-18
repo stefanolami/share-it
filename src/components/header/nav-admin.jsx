@@ -1,21 +1,40 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-const tabs = ['cards', 'Search', 'About', 'FAQ']
+const TABS = [
+	{
+		name: 'Dashboard',
+		url: '/admin',
+	},
+	{
+		name: 'Cards',
+		url: '/admin/cards',
+	},
+]
 
 const NavAdmin = () => {
-	const [selected, setSelected] = useState(tabs[0])
+	const [selected, setSelected] = useState()
+
+	const pathname = usePathname()
+
+	useEffect(() => {
+		const selectedLink = TABS.filter((link) => link.url === pathname)
+		if (selectedLink && selectedLink !== selected) {
+			setSelected(selectedLink[0])
+		}
+	}, [pathname])
 
 	return (
-		<div className="px-4 py-14 flex items-center flex-wrap gap-2">
-			{tabs.map((tab) => (
+		<div className="px-4 flex items-center flex-wrap gap-2">
+			{TABS.map((tab, index) => (
 				<Link
-					href={`/admin/${tab}`}
-					key={tab}
+					href={`${tab.url}`}
+					key={index}
 				>
 					<Chip
-						text={tab}
+						text={tab.name}
 						selected={selected === tab}
 						setSelected={setSelected}
 						key={tab}

@@ -103,8 +103,8 @@ const CardsAdmin = ({ cards }: Props) => {
 
 	return (
 		<div className="grid items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 pt-36 mx-auto w-3/4">
-			<div className="flex items-center my-10 px-8">
-				<h1 className="text-2xl font-bold text-white font-titillium">
+			<div className="flex items-center my-10">
+				<h1 className="text-4xl font-bold text-white font-titillium">
 					Cards
 				</h1>
 				<div className="ml-auto flex items-center gap-2">
@@ -117,7 +117,7 @@ const CardsAdmin = ({ cards }: Props) => {
 						<DialogTrigger asChild>
 							<Button
 								size="sm"
-								className="bg-secondo text-primo font-bold text-lg px-10 py-5 mx-auto flex shadow-lg hover:bg-secondo/80 hover:shadow-xl"
+								className="bg-terzo text-primo font-bold text-lg px-10 py-5 mx-auto flex shadow-lg hover:bg-secondo/80 hover:shadow-xl"
 								onClick={() => {
 									setIsCreateCardModalOpen(true)
 									setCurrentCard(null)
@@ -147,8 +147,10 @@ const CardsAdmin = ({ cards }: Props) => {
 					<Table className="min-w-[600px]">
 						<TableHeader>
 							<TableRow className="hover:bg-primo/70">
-								<TableHead>Name</TableHead>
-								<TableHead className="md:table-cell">
+								<TableHead className="text-white p-6">
+									Name
+								</TableHead>
+								<TableHead className="md:table-cell text-white">
 									Content
 								</TableHead>
 								<TableHead>
@@ -156,7 +158,7 @@ const CardsAdmin = ({ cards }: Props) => {
 								</TableHead>
 							</TableRow>
 						</TableHeader>
-						<TableBody>
+						<TableBody className="">
 							{cards?.map((card) => (
 								<CardRow
 									key={card.id}
